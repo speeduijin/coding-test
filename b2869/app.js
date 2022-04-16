@@ -9,4 +9,11 @@ const input = fs
 
 solution(input[0], input[1], input[2]);
 
-function solution(A, B, V) {}
+function solution(A, B, V) {
+  const tempGoal = V - A;
+  const oneDay = A - B;
+
+  const result = Math.ceil(tempGoal / oneDay) + 1;
+
+  console.log(result);
+}
