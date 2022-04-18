@@ -14,4 +14,21 @@ for (let i = 1; i < input.length; i++) {
 
 solution(+input[0], arr);
 
-function solution(T, testCaseArray) {}
+function solution(T, testCaseArray) {
+  for (let j = 0; j < T; j++) {
+    let result = 1;
+    //이항정리
+    const testCase = testCaseArray[j];
+    const n = testCase.n + testCase.k;
+    const k = testCase.n - 1; //이항계수 위치 0부터
+
+    for (let i = n; i >= n - k + 1; i--) {
+      result *= i;
+    }
+    for (let i = k; i >= 1; i--) {
+      result /= i;
+    }
+
+    console.log(result);
+  }
+}
