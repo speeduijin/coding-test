@@ -13,17 +13,28 @@ for (let i = 0; i < +input[0]; i++) {
 solution(+input[0], inputArr);
 
 function primeNum(el) {
-  if (el === 1) {
-    return false;
-  } else if (el !== 2 && el % 2 === 0) {
-    return false;
-  } else {
-    for (let i = 3; i <= Math.sqrt(el); i += 2) {
-      if (el % i === 0) {
-        return false;
-      }
+  //   if (el === 1) {
+  //     return false;
+  //   } else if (el !== 2 && el % 2 === 0) {
+  //     return false;
+  //   } else {
+  //     for (let i = 3; i <= Math.sqrt(el); i += 2) {
+  //       if (el % i === 0) {
+  //         return false;
+  //       }
+  //     }
+  //     return true;
+  //   }
+
+  let num = 2;
+  while (el > 1) {
+    if (el % num !== 0) {
+      num++;
+    } else if (el / num === 1) {
+      return true;
+    } else {
+      return false;
     }
-    return true;
   }
 }
 
@@ -37,5 +48,6 @@ function solution(N, array) {
       cnt++;
     }
   }
+
   console.log(cnt);
 }
