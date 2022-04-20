@@ -12,4 +12,30 @@ for (let i = 0; i < +input[0]; i++) {
 
 solution(+input[0], inputArr);
 
-function solution(N, array) {}
+function primeNum(el) {
+  if (el === 1) {
+    return false;
+  } else if (el !== 2 && el % 2 === 0) {
+    return false;
+  } else {
+    for (let i = 3; i <= Math.sqrt(el); i += 2) {
+      if (el % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
+
+function solution(N, array) {
+  let cnt = 0;
+
+  for (let i = 0; i < N; i++) {
+    const curNum = array[i];
+
+    if (primeNum(curNum)) {
+      cnt++;
+    }
+  }
+  console.log(cnt);
+}
