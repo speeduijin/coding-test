@@ -11,32 +11,25 @@ const input = fs
 solution(input[0], input[1]);
 
 function p(el) {
-  if (el === 1) {
-    return false;
-  } else if (el % 2 === 0) {
-    if (el === 2) {
+  let num = 2;
+  while (el > 1) {
+    if (el % num !== 0) {
+      num++;
+    } else if (el / num === 1) {
       return true;
     } else {
       return false;
     }
-  } else {
-    let isPrime = true;
-    for (let i = 3; i <= el; i++) {
-      if (el % i === 0) {
-        if (el === i) {
-          isPrime = true;
-          break;
-        } else {
-          isPrime = false;
-          break;
-        }
-      }
-    }
-    if (isPrime) {
-      return true;
-    } else {
-      return false;
-    }
+
+    // } else {
+    //     if (el / num > 2) {
+    //       return false;
+    //     } else if (el / num === 1) {
+    //       return true;
+    //     } else {
+    //       return false;
+    //     }
+    // }
   }
 }
 
