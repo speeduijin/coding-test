@@ -4,7 +4,7 @@ const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().split("\n");
 
 const inputArr = [];
-for (let i = 1; i < +input[0]; i++) {
+for (let i = 1; i <= +input[0]; i++) {
   inputArr.push(+input[i]);
 }
 
@@ -25,4 +25,24 @@ function primeNum(el) {
   }
 }
 
-function solution(T, arr) {}
+function solution(T, arr) {
+  for (let i = 0; i < T; i++) {
+    const num = arr[i];
+    let a = 1;
+    const primeArr = [];
+
+    while (a < (1 / 2) * num) {
+      a++;
+      const b = num - a;
+      if (primeNum(a)) {
+        num - a;
+        if (primeNum(b)) {
+          primeArr.push({ A: a, B: b });
+        }
+      }
+    }
+
+    const result = primeArr.pop();
+    console.log(`${result.A} ${result.B}`);
+  }
+}
