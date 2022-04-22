@@ -19,4 +19,14 @@ for (let i = 0; ; i++) {
 
 solution(inputArr);
 
-function solution(arr) {}
+function solution(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    const testCase = arr[i];
+
+    if (testCase[0] ** 2 === testCase[1] ** 2 + testCase[2] ** [2]) {
+      console.log("right");
+    } else {
+      console.log("wrong");
+    }
+  }
+}
