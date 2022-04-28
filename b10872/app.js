@@ -5,4 +5,14 @@ const input = fs.readFileSync(filePath).toString();
 
 solution(+input);
 
-function solution(N) {}
+function factorial(el) {
+  if (el === 1 || el === 0) {
+    return 1;
+  } else {
+    return el * factorial(el - 1);
+  }
+}
+
+function solution(N) {
+  console.log(factorial(N));
+}
