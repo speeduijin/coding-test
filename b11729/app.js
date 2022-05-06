@@ -12,15 +12,15 @@ function solution(N) {
   const orderOfHanoi = (n, from, other, to) => {
     if (n === 0) {
       return;
+    } else {
+      orderOfHanoi(n - 1, from, to, other);
+      count++;
+      orderArray.push([from, to]);
+      orderOfHanoi(n - 1, other, from, to);
     }
-    orderOfHanoi(n - 1, from, to, other);
-    count++;
-    orderArray.push([from, to]);
-    orderOfHanoi(n - 1, other, from, to);
-    console.log(orderArray);
   };
 
-  orderOfHanoi(N, 1, 2, 3);
+  orderOfHanoi(N, "1", "2", "3");
   console.log(count);
   console.log(orderArray.map((items) => items.join(" ")).join("\n"));
 }
