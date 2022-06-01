@@ -12,4 +12,8 @@ const [inputN, ...inputArr] = input;
 
 solution(inputN, inputArr);
 
-function solution(N, array) {}
+function solution(N, array) {
+  array.sort((a, b) => a - b);
+
+  console.log(array.join("\n"));
+}
