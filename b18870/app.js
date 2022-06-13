@@ -12,9 +12,7 @@ function solution(array) {
 
   const comparedObj = {};
 
-  for (let i = 0; i < comparedArr.length; i++) {
-    comparedObj[comparedArr[i]] = i;
-  }
+  comparedArr.forEach((el, index) => (comparedObj[el] = index));
 
   const resultArr = array.map((el) => comparedObj[String(el)]);
 
